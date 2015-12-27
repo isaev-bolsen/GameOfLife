@@ -12,7 +12,7 @@
         public void Next()
         {
             GameOfLifeFrame CurrentFrame = UI.GetCurrentFrame();
-            GameOfLifeFrame NewFrame = CurrentFrame.Clone();
+            GameOfLifeFrame NewFrame = CurrentFrame.New();
 
             for (int i = 0; i < CurrentFrame.U; ++i)
                 for (int j = 0; j < CurrentFrame.V; ++i)

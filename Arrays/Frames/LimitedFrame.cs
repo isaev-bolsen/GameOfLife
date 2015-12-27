@@ -18,7 +18,7 @@
             }
         }
 
-        public override Abstracts.GameOfLifeFrame Clone()
+        public override Abstracts.GameOfLifeFrame New()
         {
             return new LimitedFrame(U, V);
         }

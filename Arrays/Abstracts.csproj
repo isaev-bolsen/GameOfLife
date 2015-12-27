@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frames\CylinderFrame.cs" />
     <Compile Include="Frames\LimitedFrame.cs" />
+    <Compile Include="Frames\LoopedFrame.cs" />
+    <Compile Include="Frames\ToroidFrame.cs" />
     <Compile Include="GameOfLife.cs" />
     <Compile Include="GameOfLifeFrame.cs" />
     <Compile Include="GameOfLifeUI.cs" />

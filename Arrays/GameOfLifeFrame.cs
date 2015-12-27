@@ -19,7 +19,7 @@
             get { return frame.GetLength(1); }
         }
 
-        public abstract GameOfLifeFrame Clone();
+        public abstract GameOfLifeFrame New();
 
         public abstract bool this[int i, int j] { get; set; }
     }
