@@ -15,7 +15,7 @@
             GameOfLifeFrame NewFrame = CurrentFrame.New();
 
             for (int i = 0; i < CurrentFrame.U; ++i)
-                for (int j = 0; j < CurrentFrame.V; ++i)
+                for (int j = 0; j < CurrentFrame.V; ++j)
                     NewFrame[i, j] = Decide(CurrentFrame, i, j);
 
             UI.SetNewFrame(NewFrame);
