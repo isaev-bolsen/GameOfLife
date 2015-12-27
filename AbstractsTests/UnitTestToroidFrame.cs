@@ -40,18 +40,13 @@ namespace GameOfLife.AbstractsTests
 
             for (int i = 0; i < 4; ++i) Assert.IsFalse(UI.frame[i, 3]);
 
-            game.Next();
-
-            for (int i = 0; i < 4; ++i)
-                for (int j = 0; j < 4; ++j)
-                    Assert.IsFalse(UI.frame[i, j]);
-
-            game.Next();
-
-            for (int i = 0; i < 4; ++i)
-                for (int j = 0; j < 4; ++j)
-                    Assert.IsFalse(UI.frame[i, j]);
-
+            for (int k = 0; k < 2; ++k)
+            {
+                game.Next();
+                for (int i = 0; i < 4; ++i)
+                    for (int j = 0; j < 4; ++j)
+                        Assert.IsFalse(UI.frame[i, j]);
+            }
         }
     }
 }
