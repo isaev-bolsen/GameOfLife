@@ -55,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Arrays\Abstracts.csproj">
+    <ProjectReference Include="..\Abstracts\Abstracts.csproj">
       <Project>{3b87c8e5-37df-49ef-868a-a75c9970fc3e}</Project>
       <Name>Abstracts</Name>
     </ProjectReference>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstracts", "Arrays\Abstracts.csproj", "{3B87C8E5-37DF-49EF-868A-A75C9970FC3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstracts", "Abstracts\Abstracts.csproj", "{3B87C8E5-37DF-49EF-868A-A75C9970FC3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractsTests", "AbstractsTests\AbstractsTests.csproj", "{6571C28B-D769-4A94-BE2B-A5DDC3E0A770}"
 EndProject
