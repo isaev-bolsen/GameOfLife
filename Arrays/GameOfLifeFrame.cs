@@ -1,4 +1,4 @@
-﻿namespace GameOfLifeFrame.Abstracts
+﻿namespace GameOfLife.Abstracts
 {
     public abstract class GameOfLifeFrame
     {

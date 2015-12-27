@@ -1,6 +1,6 @@
-﻿namespace GameOfLifeFrame.Frames
+﻿namespace GameOfLife.Frames
 {
-    public class CylinderFrame : GameOfLifeFrame.Frames.LoopedFrame
+    public class CylinderFrame : GameOfLife.Frames.LoopedFrame
     {
         public CylinderFrame(int U, int V) : base(U, V) { }
 

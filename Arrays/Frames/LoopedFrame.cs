@@ -1,6 +1,6 @@
-﻿namespace GameOfLifeFrame.Frames
+﻿namespace GameOfLife.Frames
 {
-    public abstract class LoopedFrame :  GameOfLifeFrame.Abstracts.GameOfLifeFrame
+    public abstract class LoopedFrame :  GameOfLife.Abstracts.GameOfLifeFrame
     {
         public LoopedFrame(int U, int V) : base(U, V) { }
 

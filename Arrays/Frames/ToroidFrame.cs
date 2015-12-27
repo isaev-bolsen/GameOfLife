@@ -1,6 +1,6 @@
-﻿namespace GameOfLifeFrame.Frames
+﻿namespace GameOfLife.Frames
 {
-    public class ToroidFrame : GameOfLifeFrame.Frames.LoopedFrame
+    public class ToroidFrame : GameOfLife.Frames.LoopedFrame
     {
         public ToroidFrame(int U, int V) : base(U, V) { }
 
