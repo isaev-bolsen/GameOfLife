@@ -51,7 +51,7 @@ namespace GameOfLife.AbstractsTests
             Assert.IsFalse(UI.frame[1, 3]);
             Assert.IsFalse(UI.frame[2, 3]);
 
-            for (int k = 0; k < 2; ++k)
+            for (int k = 0; k < 3; ++k)
             {
                 game.Next();
 
