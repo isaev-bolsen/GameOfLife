@@ -4,12 +4,10 @@
     {
         protected bool[,] frame;
 
-        protected GameOfLifeFrame(bool[,] frame)
+        public GameOfLifeFrame(int U, int V)
         {
-            this.frame = frame;
+            frame = new bool[U, V];
         }
-
-        public GameOfLifeFrame(int U, int V) : this(new bool[U, V]) { }
 
         public int U
         {
@@ -23,10 +21,6 @@
 
         public abstract GameOfLifeFrame Clone();
 
-        public virtual bool this[int i, int j]
-        {
-            get { return frame[i, j]; }
-            set { frame[i, j] = value; }
-        }
+        public abstract bool this[int i, int j] { get; set; }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frames\LimitedFrame.cs" />
     <Compile Include="GameOfLife.cs" />
     <Compile Include="GameOfLifeFrame.cs" />
     <Compile Include="GameOfLifeUI.cs" />
