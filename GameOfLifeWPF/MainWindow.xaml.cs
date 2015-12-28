@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GameOfLife.Abstracts;
 
 namespace GameOfLifeWPF
 {
@@ -20,9 +21,19 @@ namespace GameOfLifeWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GameController GameController = new GameController();
+        private GameOfLife.Abstracts.GameOfLife Game;
+
         public MainWindow()
         {
             InitializeComponent();
+            Game = new GameOfLife.Abstracts.GameOfLife(GameController);
+            SettingsToolBar.DataContext = GameController;
+        }
+
+        private void StepButton_Click(object sender, RoutedEventArgs e)
+        {
+            Game.Next();
         }
     }
 }

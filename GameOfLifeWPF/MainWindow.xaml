@@ -8,17 +8,17 @@
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
         <ToolBar HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
-            <Button>Step</Button>
+            <Button Click="StepButton_Click">Step</Button>
             <Button>Start</Button>
             <Button>Clear</Button>
         </ToolBar>
-        <ToolBar HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+        <ToolBar x:Name="SettingsToolBar" HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
             <Label>Field Type</Label>
             <ComboBox x:Name="NewGameTypeSelector" MinWidth="96"/>
             <Label>Field Size</Label>
-            <TextBox x:Name="U" MinWidth="20"/>
+            <TextBox MinWidth="20" Text="{Binding Path=U, Mode=TwoWay}"/>
             <Label>X</Label>
-            <TextBox x:Name="V" MinWidth="20"/>
+            <TextBox MinWidth="20" Text="{Binding Path=V, Mode=TwoWay}"/>
         </ToolBar>
     </DockPanel>
 </Window>
