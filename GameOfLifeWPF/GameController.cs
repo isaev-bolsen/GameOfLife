@@ -19,7 +19,12 @@ namespace GameOfLifeWPF
         {
             if (U <= 0 || V <= 0) return frame;
             if (frame.U == U && frame.V == V) return frame;
-            else return new LimitedFrame(U, V);
+            else return CreateNewFrame();
+        }
+
+        private GameOfLifeFrame CreateNewFrame()
+        {
+            return new LimitedFrame(U, V);
         }
 
         public override void SetNewFrame(GameOfLifeFrame frame)
