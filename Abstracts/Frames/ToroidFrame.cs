@@ -1,6 +1,8 @@
-﻿namespace GameOfLife.Frames
+﻿using System;
+
+namespace GameOfLife.Frames
 {
-    public class ToroidFrame : GameOfLife.Frames.LoopedFrame
+    class ToroidFrame : GameOfLife.Frames.LoopedFrame
     {
         public ToroidFrame(int U, int V) : base(U, V) { }
 

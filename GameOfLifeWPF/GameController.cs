@@ -10,10 +10,23 @@ namespace GameOfLifeWPF
 {
     class GameController : GameOfLifeUI
     {
+        private GameOfLifeFrame frame;
+
         public int U { get; set; }
         public int V { get; set; }
+        public string FrameType { get; set; }
+        public IEnumerable<string> FrameTypes
+        {
+            get { return FramesFactory.AvailableTypes; }
+        }
 
-        private GameOfLifeFrame frame = new LimitedFrame(5, 5);
+        public GameController()
+        {
+            FrameType = FrameTypes.First();
+            U = 50;
+            V = 50;
+            frame = CreateNewFrame();
+        }
 
         public override GameOfLifeFrame GetCurrentFrame()
         {
@@ -24,7 +37,7 @@ namespace GameOfLifeWPF
 
         private GameOfLifeFrame CreateNewFrame()
         {
-            return new LimitedFrame(U, V);
+            return FramesFactory.GetFarame(FrameType, U, V);
         }
 
         public override void SetNewFrame(GameOfLifeFrame frame)

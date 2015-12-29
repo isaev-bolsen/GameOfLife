@@ -28,7 +28,7 @@ namespace GameOfLife.AbstractsTests
             // 1 1 1 1
             // 1 1 1 1
 
-            Abstracts.GameOfLifeFrame frame = new Frames.CylinderFrame(4, 4);
+            Abstracts.GameOfLifeFrame frame = Frames.FramesFactory.GetFarame("Cylinder", 4, 4);
             for (int i = 0; i < 4; ++i) frame[i, 1] = true;
             UImock UI = new UImock() { frame = frame };
 

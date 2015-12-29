@@ -7,7 +7,7 @@
     <ProjectGuid>{3B87C8E5-37DF-49EF-868A-A75C9970FC3E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Arrays</RootNamespace>
+    <RootNamespace>CylinderFrame</RootNamespace>
     <AssemblyName>Arrays</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frames\CylinderFrame.cs" />
+    <Compile Include="Frames\FramesFactory.cs" />
     <Compile Include="Frames\LimitedFrame.cs" />
     <Compile Include="Frames\LoopedFrame.cs" />
     <Compile Include="Frames\ToroidFrame.cs" />

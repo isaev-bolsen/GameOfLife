@@ -28,7 +28,7 @@ namespace GameOfLife.AbstractsTests
             // 0 1 1 0
             // 0 0 0 0
 
-            Abstracts.GameOfLifeFrame frame = new Frames.LimitedFrame(4, 4);
+            Abstracts.GameOfLifeFrame frame = Frames.FramesFactory.GetFarame("Flat",4, 4);
             for (int i = 0; i < 4; ++i) frame[i, 1] = true;
             UImock UI = new UImock() { frame = frame };
 

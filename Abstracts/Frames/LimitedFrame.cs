@@ -1,6 +1,6 @@
 ﻿namespace GameOfLife.Frames
 {
-    public class LimitedFrame : GameOfLife.Abstracts.GameOfLifeFrame
+    class LimitedFrame : GameOfLife.Abstracts.GameOfLifeFrame
     {
         public LimitedFrame(int U, int V) : base(U, V) { }
 
