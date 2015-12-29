@@ -14,7 +14,7 @@
         </ToolBar>
         <ToolBar x:Name="SettingsToolBar" HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
             <Label>Field Type</Label>
-            <ComboBox x:Name="NewGameTypeSelector" MinWidth="96"/>
+            <ComboBox  MinWidth="96" ItemsSource="{Binding Path=FrameTypes}" SelectedValue="{Binding Path=FrameType}"/>
             <Label>Field Size</Label>
             <TextBox MinWidth="20" Text="{Binding Path=U, Mode=TwoWay}"/>
             <Label>X</Label>
