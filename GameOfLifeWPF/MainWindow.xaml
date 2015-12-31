@@ -20,5 +20,6 @@
             <Label>X</Label>
             <TextBox MinWidth="20" Text="{Binding Path=V, Mode=TwoWay}"/>
         </ToolBar>
+        <DataGrid x:Name="FrameRenderer" ItemsSource="{Binding Path=frame}"/>
     </DockPanel>
 </Window>

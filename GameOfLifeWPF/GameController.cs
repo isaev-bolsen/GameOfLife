@@ -10,7 +10,8 @@ namespace GameOfLifeWPF
 {
     class GameController : GameOfLifeUI
     {
-        private GameOfLifeFrame frame;
+        public GameOfLifeFrame frame
+        { get; private set; }
 
         public int U { get; set; }
         public int V { get; set; }

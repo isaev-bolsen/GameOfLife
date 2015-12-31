@@ -29,6 +29,7 @@ namespace GameOfLifeWPF
             InitializeComponent();
             Game = new GameOfLife.Abstracts.GameOfLife(GameController);
             SettingsToolBar.DataContext = GameController;
+            FrameRenderer.DataContext = GameController;
         }
 
         private void StepButton_Click(object sender, RoutedEventArgs e)
