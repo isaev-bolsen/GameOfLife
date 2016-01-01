@@ -22,5 +22,10 @@ namespace GameOfLifeWPF
         {
             this.frame = frame;
         }
+
+        public void Reset()
+        {
+            frame = CreateNewFrame();
+        }
     }
 }
