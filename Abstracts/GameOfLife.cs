@@ -11,8 +11,8 @@
 
         public void Next()
         {
-            GameOfLifeFrame CurrentFrame = UI.GetCurrentFrame();
-            GameOfLifeFrame NewFrame = CurrentFrame.New();
+            GameOfLifeFrame CurrentFrame = UI.GetCurrentFrame() ?? UI.CreateNewFrame();
+            GameOfLifeFrame NewFrame = UI.CreateNewFrame();
 
             for (int i = 0; i < CurrentFrame.U; ++i)
                 for (int j = 0; j < CurrentFrame.V; ++j)

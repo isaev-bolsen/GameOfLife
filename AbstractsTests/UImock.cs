@@ -2,7 +2,16 @@
 {
     class UImock : Abstracts.GameOfLifeUI
     {
-        public Abstracts.GameOfLifeFrame frame;
+        private Abstracts.GameOfLifeFrame _frame;
+
+        public Abstracts.GameOfLifeFrame frame
+        {
+            get
+            {
+                if (_frame == null) _frame = CreateNewFrame();
+                return _frame;
+            }
+        }
 
         public override Abstracts.GameOfLifeFrame GetCurrentFrame()
         {
@@ -11,7 +20,7 @@
 
         public override void SetNewFrame(Abstracts.GameOfLifeFrame frame)
         {
-            this.frame = frame;
+            this._frame = frame;
         }
     }
 }

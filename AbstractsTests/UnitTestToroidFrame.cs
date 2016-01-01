@@ -27,10 +27,9 @@ namespace GameOfLife.AbstractsTests
             // 0 0 0 0
             // 0 0 0 0
             // 0 0 0 0
+            UImock UI = new UImock() { FrameType = "Toroid", U = 4, V = 4 };
 
-            Abstracts.GameOfLifeFrame frame = Frames.FramesFactory.GetFarame("Toroid", 4, 4);
-            for (int i = 0; i < 4; ++i) frame[i, 1] = true;
-            UImock UI = new UImock() { frame = frame };
+            for (int i = 0; i < 4; ++i) UI.frame[i, 1] = true;
 
             Abstracts.GameOfLife game = new Abstracts.GameOfLife(UI);
             game.Next();
