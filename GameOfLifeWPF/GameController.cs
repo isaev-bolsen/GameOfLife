@@ -11,7 +11,7 @@ namespace GameOfLifeWPF
     class GameController : GameOfLifeUI
     {
         public GameOfLifeFrame frame
-        { get; private set; }
+        { get; set; }
 
         public override GameOfLifeFrame GetCurrentFrame()
         {

@@ -10,7 +10,7 @@
         <ToolBar HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
             <Button Click="StepButton_Click">Step</Button>
             <Button>Start</Button>
-            <Button Click="Button_Click">Reset</Button>
+            <Button Click="ResetButton_Click">Reset</Button>
         </ToolBar>
         <ToolBar x:Name="SettingsToolBar" HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
             <Label>Field Type</Label>

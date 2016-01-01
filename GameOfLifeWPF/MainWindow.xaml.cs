@@ -37,8 +37,10 @@ namespace GameOfLifeWPF
             Game.Next();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
+            var res = FrameRenderer.ItemsSource;
+
             GameController.Reset();
         }
     }
