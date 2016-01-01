@@ -20,6 +20,18 @@
             <Label>X</Label>
             <TextBox MinWidth="20" Text="{Binding Path=V, Mode=TwoWay}"/>
         </ToolBar>
-        <DataGrid x:Name="FrameRenderer" ItemsSource="{Binding Path=frame}"/>
+        <ItemsControl x:Name="FrameRenderer" ItemsSource="{Binding Path=frame, Mode=TwoWay}" 
+                      ScrollViewer.CanContentScroll="True" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible"    
+                      >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ItemsControl ItemsSource="{Binding}">
+                   </ItemsControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
     </DockPanel>
 </Window>

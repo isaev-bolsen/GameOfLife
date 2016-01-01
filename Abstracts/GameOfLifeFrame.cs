@@ -20,13 +20,17 @@ namespace GameOfLife.Abstracts
 
             public IEnumerable<bool> Current
             {
-                get { return Enumerable.Range(0, frame.U).Select(x => frame[x, y]); }
+                get { return GetCurrent(); }
             }
 
             object IEnumerator.Current
             {
-                get { return Enumerable.Range(0, frame.U).Select(x => frame[x, y]); }
+                get { return GetCurrent(); }
+            }
 
+            private IEnumerable<bool> GetCurrent()
+            {
+                return Enumerable.Range(0, frame.U).Select(x => frame[x, y]);
             }
 
             public void Dispose() { }
