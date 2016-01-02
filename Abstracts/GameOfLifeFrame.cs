@@ -11,7 +11,7 @@ namespace GameOfLife.Abstracts
         {
             public GameOfLifeFrame frame;
 
-            private int y = 0;
+            private int y = -1;
 
             public enumerator(GameOfLifeFrame frame)
             {
@@ -30,7 +30,7 @@ namespace GameOfLife.Abstracts
 
             private IEnumerable<bool> GetCurrent()
             {
-                return Enumerable.Range(0, frame.U).Select(x => frame[x, y]);
+                return Enumerable.Range(0, frame.U).Select(x => frame[y, x]);
             }
 
             public void Dispose() { }
@@ -38,7 +38,7 @@ namespace GameOfLife.Abstracts
             public bool MoveNext()
             {
                 ++y;
-                return y <= frame.V;
+                return y < frame.V;
             }
 
             public void Reset()
