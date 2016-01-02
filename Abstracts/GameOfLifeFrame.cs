@@ -38,7 +38,7 @@ namespace GameOfLife.Abstracts
             public bool MoveNext()
             {
                 ++y;
-                return y < frame.V;
+                return y <= frame.V;
             }
 
             public void Reset()

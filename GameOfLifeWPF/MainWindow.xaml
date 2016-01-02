@@ -27,6 +27,8 @@
                   HorizontalAlignment="Center" 
                   VerticalAlignment="Center" 
                   CanUserAddRows="False"
-                  CanUserResizeRows="False"/>
+                  CanUserResizeRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserSortColumns="False"                />
     </DockPanel>
 </Window>
