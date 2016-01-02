@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GameOfLife.Frames
+﻿namespace GameOfLife.Frames
 {
     class ToroidFrame : GameOfLife.Frames.LoopedFrame
     {

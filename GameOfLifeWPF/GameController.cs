@@ -1,9 +1,9 @@
 ﻿using GameOfLife.Abstracts;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Linq;
 using System.Windows.Threading;
 
 namespace GameOfLifeWPF
