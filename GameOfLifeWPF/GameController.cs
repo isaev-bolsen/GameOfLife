@@ -18,6 +18,7 @@ namespace GameOfLifeWPF
         public GameController(DataGrid renderer)
         {
             this.renderer = renderer;
+            renderer.AutoGenerateColumns = false;
             Reset();
         }
 
