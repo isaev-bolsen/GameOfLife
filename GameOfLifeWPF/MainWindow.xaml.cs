@@ -21,16 +21,15 @@ namespace GameOfLifeWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private GameController GameController = new GameController();
+        private GameController GameController;
         private GameOfLife.Abstracts.GameOfLife Game;
 
         public MainWindow()
         {
             InitializeComponent();
             Game = new GameOfLife.Abstracts.GameOfLife(GameController);
-            GameController.Reset();
+            GameController = new GameController(FrameRenderer);
             SettingsToolBar.DataContext = GameController;
-            FrameRenderer.DataContext = GameController;
         }
 
         private void StepButton_Click(object sender, RoutedEventArgs e)

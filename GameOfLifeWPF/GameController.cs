@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GameOfLife.Abstracts;
-using GameOfLife.Frames;
+﻿using GameOfLife.Abstracts;
+using System.Windows.Controls;
 
 namespace GameOfLifeWPF
 {
@@ -12,6 +7,14 @@ namespace GameOfLifeWPF
     {
         public GameOfLifeFrame frame
         { get; set; }
+
+        private ItemsControl renderer;
+
+        public GameController(ItemsControl renderer)
+        {
+            this.renderer = renderer;
+            Reset();
+        }
 
         public override GameOfLifeFrame GetCurrentFrame()
         {
@@ -21,11 +24,12 @@ namespace GameOfLifeWPF
         public override void SetNewFrame(GameOfLifeFrame frame)
         {
             this.frame = frame;
+            renderer.ItemsSource = frame;
         }
 
         public void Reset()
         {
-            frame = CreateNewFrame();
+            SetNewFrame(CreateNewFrame());
         }
     }
 }
