@@ -24,6 +24,10 @@ namespace GameOfLifeWPF
 
         public override GameOfLifeFrame GetCurrentFrame()
         {
+            for (int i = 0; i < frameRepresentation[0].Length; ++i)
+                for (int j = 0; j < frameRepresentation.Length; ++j)
+                    frame[i, j] = frameRepresentation[j][i];
+
             return frame;
         }
 
@@ -41,6 +45,7 @@ namespace GameOfLifeWPF
                         Binding = new Binding(String.Format("[{0}]", i))
                     });
             }
+
             renderer.ItemsSource = frameRepresentation;
         }
 
