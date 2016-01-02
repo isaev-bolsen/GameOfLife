@@ -41,5 +41,13 @@ namespace GameOfLifeWPF
         {
             GameController.Reset();
         }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Game.StartStop();
+            if (button.Content.ToString() == "Start") button.Content = "Stop";
+            else button.Content = "Start";
+        }
     }
 }

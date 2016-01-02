@@ -1,12 +1,23 @@
-﻿namespace GameOfLife.Abstracts
+﻿using System;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace GameOfLife.Abstracts
 {
     public class GameOfLife
     {
+        private Timer timer;
+
         private GameOfLifeUI UI;
 
         public GameOfLife(GameOfLifeUI UI)
         {
             this.UI = UI;
+        }
+
+        private void Next(object state)
+        {
+            Next();
         }
 
         public void Next()
@@ -38,6 +49,16 @@
             if (LiveNeighbors == 3) return true;
             if (CurrentFrame[i, j] && LiveNeighbors == 2) return true;
             return false;
+        }
+
+        public void StartStop()
+        {
+            if (timer == null) timer = new Timer(Next, null, 0, 3000);
+            else
+            {
+                timer.Dispose();
+                timer = null;
+            }
         }
     }
 }

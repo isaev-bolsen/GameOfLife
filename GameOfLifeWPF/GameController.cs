@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Linq;
+using System.Windows.Threading;
 
 namespace GameOfLifeWPF
 {
@@ -15,10 +16,13 @@ namespace GameOfLifeWPF
 
         private DataGrid renderer;
 
+        private Dispatcher Dispatcher;
+
         public GameController(DataGrid renderer)
         {
             this.renderer = renderer;
             renderer.AutoGenerateColumns = false;
+            Dispatcher = Dispatcher.CurrentDispatcher;
             Reset();
         }
 
@@ -33,6 +37,11 @@ namespace GameOfLifeWPF
 
         public override void SetNewFrame(GameOfLifeFrame frame)
         {
+            Dispatcher.Invoke(() => SetFrame(frame));
+        }
+
+        private void   SetFrame(GameOfLifeFrame frame)
+        {
             this.frame = frame;
             frameRepresentation = frame.Select(r => r.ToArray()).ToArray();
 
@@ -45,7 +54,6 @@ namespace GameOfLifeWPF
                         Binding = new Binding(String.Format("[{0}]", i))
                     });
             }
-
             renderer.ItemsSource = frameRepresentation;
         }
 

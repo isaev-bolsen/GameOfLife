@@ -9,7 +9,7 @@
     <DockPanel>
         <ToolBar HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
             <Button Click="StepButton_Click">Step</Button>
-            <Button>Start</Button>
+            <Button VerticalAlignment="Bottom" Click="StartButton_Click">Start</Button>
             <Button Click="ResetButton_Click">Reset</Button>
         </ToolBar>
         <ToolBar x:Name="SettingsToolBar" HorizontalContentAlignment="Stretch" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
@@ -20,7 +20,7 @@
             <Label>X</Label>
             <TextBox MinWidth="20" Text="{Binding Path=V, Mode=TwoWay}"/>
         </ToolBar>
-        <DataGrid x:Name="FrameRenderer" 
+        <DataGrid x:Name="FrameRenderer"
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.HorizontalScrollBarVisibility="Visible" 
                   HeadersVisibility="None" 
