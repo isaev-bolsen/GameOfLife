@@ -32,13 +32,15 @@ namespace GameOfLifeWPF
             this.frame = frame;
             frameRepresentation = frame.Select(r => r.ToArray()).ToArray();
 
-            renderer.Columns.Clear();
-            for (int i = 0; i < frame.U; ++i)
-                renderer.Columns.Add(new DataGridCheckBoxColumn()
-                {
-                    Binding = new Binding(String.Format("[{0}]", i))
-                });
-
+            if (renderer.Columns.Count != frame.U)
+            {
+                renderer.Columns.Clear();
+                for (int i = 0; i < frame.U; ++i)
+                    renderer.Columns.Add(new DataGridCheckBoxColumn()
+                    {
+                        Binding = new Binding(String.Format("[{0}]", i))
+                    });
+            }
             renderer.ItemsSource = frameRepresentation;
         }
 

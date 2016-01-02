@@ -27,8 +27,8 @@ namespace GameOfLifeWPF
         public MainWindow()
         {
             InitializeComponent();
-            Game = new GameOfLife.Abstracts.GameOfLife(GameController);
             GameController = new GameController(FrameRenderer);
+            Game = new GameOfLife.Abstracts.GameOfLife(GameController);
             SettingsToolBar.DataContext = GameController;
         }
 
