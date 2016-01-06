@@ -5,33 +5,29 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Threading;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Collections.Generic;
 
 namespace GameOfLifeWPF
 {
     class GameController : GameOfLifeUI
     {
-        private GameOfLifeFrame frame { get; set; }
-
-        private bool[][] frameRepresentation;
-
-        private DataGrid renderer;
-
+        public GameOfLifeFrame frame { get; private set; }
+        private Image renderer;
         private Dispatcher Dispatcher;
+        private readonly BitmapPalette palette = new BitmapPalette(new List<Color> { Colors.Black, Colors.Green });
 
-        public GameController(DataGrid renderer)
+
+        public GameController(Image renderer)
         {
             this.renderer = renderer;
-            renderer.AutoGenerateColumns = false;
             Dispatcher = Dispatcher.CurrentDispatcher;
             Reset();
         }
 
         public override GameOfLifeFrame GetCurrentFrame()
         {
-            for (int i = 0; i < frameRepresentation.Length; ++i)
-                for (int j = 0; j < frameRepresentation[0].Length; ++j)
-                    frame[i, j] = frameRepresentation[i][j];
-
             return frame;
         }
 
@@ -40,21 +36,16 @@ namespace GameOfLifeWPF
             Dispatcher.Invoke(() => SetFrame(frame));
         }
 
-        private void   SetFrame(GameOfLifeFrame frame)
+        private void SetFrame(GameOfLifeFrame frame)
         {
             this.frame = frame;
-            frameRepresentation = frame.Select(r => r.ToArray()).ToArray();
+            renderer.Source = null;
+            renderer.Source = BitmapSource.Create(frame.U, frame.V, 8, 8, PixelFormats.Indexed8, palette, GetBytes(frame), frame.U);
+        }
 
-            if (renderer.Columns.Count != frame.U)
-            {
-                renderer.Columns.Clear();
-                for (int i = 0; i < frame.U; ++i)
-                    renderer.Columns.Add(new DataGridCheckBoxColumn()
-                    {
-                        Binding = new Binding(String.Format("[{0}]", i))
-                    });
-            }
-            renderer.ItemsSource = frameRepresentation;
+        private Array GetBytes(GameOfLifeFrame frame)
+        {
+            return frame.SelectMany(r => r.Select(p => Convert.ToByte(p))).ToArray();
         }
 
         public void Reset()
