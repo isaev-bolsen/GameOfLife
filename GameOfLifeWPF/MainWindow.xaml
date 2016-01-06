@@ -21,12 +21,13 @@
             <TextBox MinWidth="20" Text="{Binding Path=V, Mode=TwoWay}"/>
         </ToolBar>
         <Viewbox> 
-            <Image            x:Name="FrameRenderer"
-                  ScrollViewer.CanContentScroll="True" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Visible" 
-                  HorizontalAlignment="Center" 
-                  VerticalAlignment="Center"/>
-                
+            <Image            
+                x:Name="FrameRenderer"
+                ScrollViewer.CanContentScroll="True" 
+                ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                MouseDown="FrameRenderer_MouseDown"/>
         </Viewbox>
     </DockPanel>
 </Window>

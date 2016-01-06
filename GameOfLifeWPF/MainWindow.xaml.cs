@@ -36,5 +36,11 @@ namespace GameOfLifeWPF
             if (button.Content.ToString() == "Start") button.Content = "Stop";
             else button.Content = "Start";
         }
+
+        private void FrameRenderer_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var pos = e.GetPosition(sender as IInputElement);
+            GameController.SetPixel(pos.X, pos.Y);
+        }
     }
 }

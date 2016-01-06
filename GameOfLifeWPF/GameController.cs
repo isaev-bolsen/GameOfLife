@@ -13,17 +13,30 @@ namespace GameOfLifeWPF
 {
     class GameController : GameOfLifeUI
     {
-        public GameOfLifeFrame frame { get; private set; }
+        private GameOfLifeFrame frame { get;  set; }
         private Image renderer;
         private Dispatcher Dispatcher;
         private readonly BitmapPalette palette = new BitmapPalette(new List<Color> { Colors.Black, Colors.Green });
-
 
         public GameController(Image renderer)
         {
             this.renderer = renderer;
             Dispatcher = Dispatcher.CurrentDispatcher;
             Reset();
+        }
+
+        private void SetPixel(int x,int y)
+        {
+            frame[x, y] = !frame[x, y];
+            RedrawFrame();
+        }
+
+        public void SetPixel(double x, double y)
+        {
+            SetPixel(
+                Convert.ToInt32(y / renderer.ActualWidth * frame.U),
+                Convert.ToInt32(x / renderer.ActualHeight * frame.V)
+                );
         }
 
         public override GameOfLifeFrame GetCurrentFrame()
@@ -39,11 +52,16 @@ namespace GameOfLifeWPF
         private void SetFrame(GameOfLifeFrame frame)
         {
             this.frame = frame;
-            renderer.Source = null;
-            renderer.Source = BitmapSource.Create(frame.U, frame.V, 8, 8, PixelFormats.Indexed8, palette, GetBytes(frame), frame.U);
+            RedrawFrame();
         }
 
-        private Array GetBytes(GameOfLifeFrame frame)
+        private void RedrawFrame()
+        {
+            renderer.Source = null;
+            renderer.Source = BitmapSource.Create(frame.U, frame.V, 8, 8, PixelFormats.Indexed8, palette, GetBytes(), frame.U);
+        }
+
+        private Array GetBytes()
         {
             return frame.SelectMany(r => r.Select(p => Convert.ToByte(p))).ToArray();
         }
