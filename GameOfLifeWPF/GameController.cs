@@ -33,9 +33,10 @@ namespace GameOfLifeWPF
 
         public void SetPixel(double x, double y)
         {
+            double HalfOfCell = renderer.ActualWidth / frame.U / 2;
             SetPixel(
-                Convert.ToInt32(y / renderer.ActualWidth * frame.U),
-                Convert.ToInt32(x / renderer.ActualHeight * frame.V)
+                Convert.ToInt32((y - HalfOfCell) / renderer.ActualWidth * frame.U),
+                Convert.ToInt32((x - HalfOfCell) / renderer.ActualHeight * frame.V)
                 );
         }
 
