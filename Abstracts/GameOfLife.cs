@@ -5,8 +5,9 @@ namespace GameOfLife.Abstracts
     public class GameOfLife
     {
         private Timer timer;
-
         private GameOfLifeUI UI;
+
+        public int delay = 1000;
 
         public GameOfLife(GameOfLifeUI UI)
         {
@@ -51,7 +52,7 @@ namespace GameOfLife.Abstracts
 
         public void StartStop()
         {
-            if (timer == null) timer = new Timer(Next, null, 0, 3000);
+            if (timer == null) timer = new Timer(Next, null, 0, delay);
             else
             {
                 timer.Dispose();

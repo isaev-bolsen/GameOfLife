@@ -15,7 +15,7 @@ namespace GameOfLifeWPF
         {
             InitializeComponent();
             GameController = new GameController(FrameRenderer);
-            Game = new GameOfLife.Abstracts.GameOfLife(GameController);
+            Game = new GameOfLife.Abstracts.GameOfLife(GameController) { delay = 3000 };
             SettingsToolBar.DataContext = GameController;
         }
 
